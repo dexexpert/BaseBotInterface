@@ -52,7 +52,6 @@ export async function getPoolFeeAndProtocolByPairAddress(tokenAddress: string, p
   return null;
 }
 
-
 export const handleWaitingTokenAddress = async (ctx: any) => {
   try {
     ctx.session.state = "walletWithdrawAmount";

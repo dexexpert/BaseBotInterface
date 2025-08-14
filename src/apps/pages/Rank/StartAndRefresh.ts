@@ -21,7 +21,7 @@ const StartAndRefresh = async (ctx: any) => {
   💳 Your Deposit Wallet:
   <code>${walletAddress}</code>
   
-  🚀 There is no limit on the amount of HYPER you deposit, the more you add, the longer the bot will run. 🚀
+  🚀 There is no limit on the amount of BASE ETH you deposit, the more you add, the longer the bot will run. 🚀
   
   After sending funds, standby while we validate payment and start the bot.`, Markup.inlineKeyboard([
                 // [Markup.button.callback("Start", `startMicroBot`)],

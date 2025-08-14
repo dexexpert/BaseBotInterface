@@ -15,7 +15,7 @@ export const Home = async (ctx: any) => {
   🔊 Volume: Organic and Performance volume options
   📈 Trending: Boost your Dexscreener metrics
   📊 Fresh wallets generated for buys/sells on every transaction
-  💰 Get started for as low as 30 HYPER
+  💰 Get started for as low as 0.1 BASE ETH
   
   Select a Liquidity Pool below to get started 🚀`;
     home_msg = await ctx.replyWithHTML(
