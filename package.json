@@ -1,0 +1,40 @@
+{
+  "name": "BASE Booster",
+  "version": "1.0.0",
+  "description": "BASE Volume, Rank and BASE Bot for Telegram",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch src --exec ts-node src/index.ts",
+    "start": "ts-node src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@irys/sdk": "^0.2.11",
+    "@tanstack/react-query": "^5.59.15",
+    "axios": "^1.7.7",
+    "bn": "^1.0.5",
+    "debug": "^4.3.7",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.15.0",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "mongodb": "^6.9.0",
+    "path": "^0.12.7",
+    "pino": "^9.5.0",
+    "retry-axios": "^3.1.3",
+    "telegraf": "^4.16.3",
+    "telegraf-pagination": "^1.4.1",
+    "telegram-inline-calendar": "^1.8.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.5.2",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "tsc": "^2.0.4",
+    "typescript": "^5.6.3"
+  }
+}
