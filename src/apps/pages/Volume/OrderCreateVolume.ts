@@ -75,6 +75,8 @@ const OrderCreateVolume = async (ctx: any, amount: Number) => {
       tokenAddress: tokenAddress,
       txsPerMinute: txsPerMinute,
       protocol: poolInfo?.protocol,
+      version: poolInfo?.version,
+      dexId: poolInfo?.dexId,
       maxTxAmount: amount,
       depositedAmount: 0,
       remainingBalance: 0,

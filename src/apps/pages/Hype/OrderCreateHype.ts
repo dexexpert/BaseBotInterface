@@ -51,6 +51,8 @@ const OrderCreateHype = async (ctx: any) => {
       pool: poolForBot,
       tokenAddress: tokenAddress,
       protocol: poolInfo?.protocol,
+      version: poolInfo?.version,
+      dexId: poolInfo?.dexId,
       depositedAmount: 0,
       remainingBalance: 0,
       buyCount: 0,
