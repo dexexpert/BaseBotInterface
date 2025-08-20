@@ -51,16 +51,23 @@ export async function getPoolFeeAndProtocolByPairAddress(
         pool.pairAddress.toLowerCase() === pairAddress.toLowerCase()
     );
     let dexId = pool.dexId;
-    if(pool.dexId === "deltaswap") dexId = "deltaswap-v1"
-    else if (pool.dexId === "balancer") dexId = "balancer-v2-stable"
-    else if (pool.dexId === "solidlycom") dexId = "solidly-v3"
-    else if (pool.dexId === "rocketswap") dexId = "rocketswap-v2"
-    else if (pool.dexId === "equalizer") dexId = "scale"
-    else if (pool.dexId === "uniswap") dexId = "uniswap" + pool.labels[0]
-    else if (pool.dexId === "pancakeswap") dexId = "pancakeswap" + pool.labels[0]
-    else if (pool.dexid === "swapbased") dexId = "swapbased" + pool.labels[0] === "v2" ? "" : pool.labes[0]
+    if (pool.dexId === "deltaswap") dexId = "deltaswap-v1";
+    else if (pool.dexId === "balancer") dexId = "balancer-v2-stable";
+    else if (pool.dexId === "solidlycom") dexId = "solidly-v3";
+    else if (pool.dexId === "rocketswap") dexId = "rocketswap-v2";
+    else if (pool.dexId === "equalizer") dexId = "scale";
+    else if (pool.dexId === "uniswap")
+      dexId = "uniswap" + pool.labels[0] !== "v3" ? "-" : "" + pool.labels[0];
+    else if (pool.dexId === "pancakeswap")
+      dexId = "pancake" + pool.labels[0] !== "v2" && "-" + pool.labels[0];
+    else if (pool.dexid === "swapbased")
+      dexId = "swapbased" + pool.labels[0] === "v2" ? "" : "-" + pool.labes[0];
     return pool
-      ? { protocol: pool.dexId, version: pool.labels ? pool.labels[0] : "none", dexId }
+      ? {
+          protocol: pool.dexId,
+          version: pool.labels ? pool.labels[0] : "none",
+          dexId,
+        }
       : null;
   }
   return null;
