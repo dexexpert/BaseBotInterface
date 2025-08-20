@@ -38,40 +38,40 @@ async function fetchAllPools(tokenAddress: string) {
   }
 }
 
-export async function getPoolFeeAndProtocolByPairAddress(
-  tokenAddress: string,
-  pairAddress: string
-) {
-  const pools = await fetchAllPools(tokenAddress);
+// export async function getPoolFeeAndProtocolByPairAddress(
+//   tokenAddress: string,
+//   pairAddress: string
+// ) {
+//   const pools = await fetchAllPools(tokenAddress);
 
-  if (pools) {
-    // Find the pool with matching poolAddress
-    const pool = pools.find(
-      (pool: any) =>
-        pool.pairAddress.toLowerCase() === pairAddress.toLowerCase()
-    );
-    let dexId = pool.dexId;
-    if (pool.dexId === "deltaswap") dexId = "deltaswap-v1";
-    else if (pool.dexId === "balancer") dexId = "balancer-v2-stable";
-    else if (pool.dexId === "solidlycom") dexId = "solidly-v3";
-    else if (pool.dexId === "rocketswap") dexId = "rocketswap-v2";
-    else if (pool.dexId === "equalizer") dexId = "scale";
-    else if (pool.dexId === "uniswap")
-      dexId = "uniswap" + pool.labels[0] !== "v3" ? "-" : "" + pool.labels[0];
-    else if (pool.dexId === "pancakeswap")
-      dexId = "pancake" + pool.labels[0] !== "v2" && "-" + pool.labels[0];
-    else if (pool.dexid === "swapbased")
-      dexId = "swapbased" + pool.labels[0] === "v2" ? "" : "-" + pool.labes[0];
-    return pool
-      ? {
-          protocol: pool.dexId,
-          version: pool.labels ? pool.labels[0] : "none",
-          dexId,
-        }
-      : null;
-  }
-  return null;
-}
+//   if (pools) {
+//     // Find the pool with matching poolAddress
+//     const pool = pools.find(
+//       (pool: any) =>
+//         pool.pairAddress.toLowerCase() === pairAddress.toLowerCase()
+//     );
+//     let dexId = pool.dexId;
+//     if (pool.dexId === "deltaswap") dexId = "deltaswap-v1";
+//     else if (pool.dexId === "balancer") dexId = "balancer-v2-stable";
+//     else if (pool.dexId === "solidlycom") dexId = "solidly-v3";
+//     else if (pool.dexId === "rocketswap") dexId = "rocketswap-v2";
+//     else if (pool.dexId === "equalizer") dexId = "scale";
+//     else if (pool.dexId === "uniswap")
+//       dexId = "uniswap" + pool.labels[0] !== "v3" ? "-" : "" + pool.labels[0];
+//     else if (pool.dexId === "pancakeswap")
+//       dexId = "pancake" + pool.labels[0] !== "v2" && "-" + pool.labels[0];
+//     else if (pool.dexid === "swapbased")
+//       dexId = "swapbased" + pool.labels[0] === "v2" ? "" : "-" + pool.labes[0];
+//     return pool
+//       ? {
+//           protocol: pool.dexId,
+//           version: pool.labels ? pool.labels[0] : "none",
+//           dexId,
+//         }
+//       : null;
+//   }
+//   return null;
+// }
 
 export const handleWaitingTokenAddress = async (ctx: any) => {
   try {
@@ -139,7 +139,7 @@ export const handleWaitingTokenAddress = async (ctx: any) => {
             0,
             20
           )}...`, // Button name
-          `poolID_${item.pairAddress}` // Callback data
+          `poolID_${item.pairAddress.slice(0,20)}` // Callback data
         ),
       ]);
       await ctx.reply("Select a pool:", Markup.inlineKeyboard(poolItems));

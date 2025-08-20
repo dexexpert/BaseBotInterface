@@ -73,7 +73,7 @@ const Actions = (bot: Telegraf<SessionContext>) => {
       const dataResult = data.split("poolID_");
       const poolID = dataResult[1];
       const pools = ctx.session.realPools;
-      const selectedPool = pools.filter((item: any) => item.pairAddress == poolID);
+      const selectedPool = pools.filter((item: any) => item.pairAddress.slice(0,20) == poolID);
       ctx.session.selectedPool = selectedPool;
       await Volume(ctx);
     } else if (data.startsWith("volume")) {

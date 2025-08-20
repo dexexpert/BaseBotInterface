@@ -2,7 +2,7 @@ import { Markup } from "telegraf";
 import { ethers } from "ethers";
 import {  colHype } from "../../../services/mongo"
 import StartAndRefresh from "./StartAndRefresh";
-import { getPoolFeeAndProtocolByPairAddress } from "../../handlers";
+// import { getPoolFeeAndProtocolByPairAddress } from "../../handlers";
 // 5,6,7 - 30
 // 8,9 - 40
 // 10, 11 - 50
@@ -42,7 +42,7 @@ const OrderCreateHype = async (ctx: any) => {
     const tgId = ctx.from?.id.toString();
     const poolForBot = ctx.session.selectedPool;
     const tokenAddress = poolForBot[0].baseToken.address;
-    const poolInfo = await getPoolFeeAndProtocolByPairAddress(tokenAddress, poolForBot[0].pairAddress);
+    // const poolInfo = await getPoolFeeAndProtocolByPairAddress(tokenAddress, poolForBot[0].pairAddress);
     const hypeData = {
       username,
       tgId,
@@ -50,9 +50,9 @@ const OrderCreateHype = async (ctx: any) => {
       walletAddress: walletAddress,
       pool: poolForBot,
       tokenAddress: tokenAddress,
-      protocol: poolInfo?.protocol,
-      version: poolInfo?.version,
-      dexId: poolInfo?.dexId,
+      // protocol: poolInfo?.protocol,
+      // version: poolInfo?.version,
+      // dexId: poolInfo?.dexId,
       depositedAmount: 0,
       remainingBalance: 0,
       buyCount: 0,
