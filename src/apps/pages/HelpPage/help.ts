@@ -6,7 +6,7 @@ export const help = async (ctx: any) => {
   const firstName = ctx.from?.first_name || "";
   try {
     await ctx.deleteMessage();
-    let welcome_msg = `👋 Hi, <b>${firstName}</b>\nWelcome to Hyper Volume Bot!\n\n`;
+    let welcome_msg = `👋 Hi, <b>${firstName}</b>\nWelcome to Base Volume Bot!\n\n`;
 
     welcome_msg += `If you have any questions or inquiries, feel free to contact @onlycallmedev\n Thank you!`;
     let home_msg = await ctx.replyWithHTML(

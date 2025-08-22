@@ -6,7 +6,7 @@ import express from "express";
 import axios from "axios";
 
 const app = express();
-const PORT = 3004;
+const PORT = 3006;
 app.use(express.json());
 const SECOND_BACKEND_URL = "http://localhost:4000/api";
 app.get("/", (req, res) => {

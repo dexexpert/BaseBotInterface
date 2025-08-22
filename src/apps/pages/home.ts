@@ -6,11 +6,11 @@ export const Home = async (ctx: any) => {
   const firstName = ctx.from?.first_name || "";
   try {
     if (Array.isArray(ctx.session.messageIds) && ctx.session.messageIds.length > 0) { await ctx.deleteMessage() }
-    let welcome_msg = `👤 Hi, <b>${firstName}</b>\nWelcome to Hyper EVM Volume Bot!\n\n`;
+    let welcome_msg = `👤 Hi, <b>${firstName}</b>\nWelcome to Base EVM Volume Bot!\n\n`;
 
     let home_msg: any;
 
-    welcome_msg += `Experience the power of our volume bot on Hyper EVM. We offer tools to boost your tokens metrics!
+    welcome_msg += `Experience the power of our volume bot on Base EVM. We offer tools to boost your tokens metrics!
   
   🔊 Volume: Organic and Performance volume options
   📈 Trending: Boost your Dexscreener metrics

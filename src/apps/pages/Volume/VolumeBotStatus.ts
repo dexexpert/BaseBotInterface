@@ -61,7 +61,7 @@ const VolumeBotStatus = async (ctx: any) => {
   ⏹ Bot Status :<code> ${status === "startup" ? "Bot is waiting" : (status === "alive") ? "Bot is running" : "Bot was dead"}</code>
   💹 Bot maker: ${buyCount} (buy Count: ${buyCount}, sell Count: ${sellCount})
 
-  🔥Send a minimum of  <code>${(txsPerMinute * Number(amount) * 1.5).toFixed(2)}</code>  HYPER to this deposit wallet address:
+  🔥Send a minimum of  <code>${(txsPerMinute * Number(amount) * 1.5).toFixed(2)}</code>  ETH to this deposit wallet address:
   💳 Your Deposit Wallet:
   <code>${walletAddress}</code>
   

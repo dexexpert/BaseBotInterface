@@ -64,7 +64,7 @@ const RankBotStatus = async (ctx: any) => {
 
   💳 Your Deposit Wallet:
   <code>${walletAddress}</code>
-  🚨 You must deposit over 2 BASE ETH to bot wallet🚨
+  🚨 You must deposit over 0.01 BASE ETH to bot wallet🚨
   
   🚀 There is no limit on the amount of BASE ETH you deposit, the more you add, the longer the bot will run. 🚀
   
